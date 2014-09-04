@@ -5,6 +5,10 @@ First install Python virtualenv
     virtualenv-2.7 --no-site-packages pythonenv
     cd pythonenv
 
+And some other libs
+
+    gem update --system && gem install compass
+
 Then install nodeenv. ( _You can find the python package here_ : [Nodeenv](https://pypi.python.org/pypi/nodeenv) )
 
     bin/pip install nodeenv
