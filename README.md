@@ -14,11 +14,10 @@ Then install nodeenv. ( _You can find the python package here_ : [Nodeenv](https
 
 Download app
 
-    git clone git@bitbucket.org:redturtle/ceboost.js.git client
+    git clone git@github.com:getpenelope/penelope.js.git
+    
 rename your app in bower.json (_this name has to be the name given to the app folder es: client_)
 
-    npm install -g bower
-    npm install -g grunt-cli
     npm install
     bower install
     grunt serve
