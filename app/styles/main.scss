@@ -90,3 +90,48 @@ body {
     border-bottom: 0;
   }
 }
+@import "../bower_components/jquery.atwho/dist/css/jquery.atwho.min.css";
+.inputor {
+    height: 160px;
+    width: 90%;
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    padding: 5px 8px;
+    outline: 0 none;
+    margin: 10px 0;
+    background: white;
+    font-size: inherit;
+    overflow-y: scroll;
+}
+
+span.tag.project{
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+span.tag.cr{
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+span.tag{
+    padding: 3px 5px;
+    margin: 3px 0 3px 5px;
+    position: relative;
+    line-height: 13px;
+    color: #333;
+    cursor: default;
+    border: 1px solid #aaaaaa;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 2px #fff inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+    background-clip: padding-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #e4e4e4;
+}
+
