@@ -1,5 +1,7 @@
 'use strict';
 /* global $ */
+/*jshint camelcase: false */
+
 
 /**
  * @ngdoc function
@@ -10,21 +12,34 @@
  */
 angular.module('penelopejsApp')
   .controller('SuperduffyCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+    $scope.task = '';
+    $scope.task_json = {};
+
+    $scope.$watch('task', function(v){
+        var parsed = $($.parseHTML(v));
+        $scope.task_json.projects = [];
+        $scope.task_json.crs = [];
+
+        angular.forEach(parsed.find('.project'), function(value, key) {
+               this.push($(value).text());
+        }, $scope.task_json.projects);
+        angular.forEach(parsed.find('.cr'), function(value, key) {
+               this.push($(value).text());
+        }, $scope.task_json.crs);
+    });
+
     $('#inputor')
       .atwho({
         at: '@',
-        insert_tpl: "<span class='tag project'>${atwho-data-value}</span>",
+        tpl: '<li data-value="${name}">${name}</li>',
+        insert_tpl: '<span class=\'tag project\'>${atwho-data-value}</span>',
         data:['penelope', 'unife', 'cebora', 'cefla']
     })
       .atwho({
         at: 'to:',
-        insert_tpl: "<span><img src='${atwho-data-value}'></span>",
-        tpl: "<li data-value='${gravatar}'>${name}</li>",
+        tpl: '<li data-value="${name}">${name}</li>',
+        insert_tpl: '<span class=\'user\' data-username=\'${name}\'><img src=\'${gravatar}\'></span>',
         data:[
         {
           gravatar: 'https://www.gravatar.com/avatar/2d8d80189ecaf3d4a27b4ee1f699e4e3?s=30',
@@ -38,12 +53,14 @@ angular.module('penelopejsApp')
     })
       .atwho({
         at: 'cr:',
-        insert_tpl: "<span class='tag cr'>${atwho-data-value}</span>",
+        tpl: '<li data-value="${name}">${name}</li>',
+        insert_tpl: '<span class=\'tag cr\'>${atwho-data-value}</span>',
         data:['development', 'new custom fields']
     })
       .atwho({
         at: 'is:',
-        insert_tpl: "<span class='tag'>${atwho-data-value}</span>",
+        tpl: '<li data-value="${name}">${name}</li>',
+        insert_tpl: '<span class=\'tag\'>${atwho-data-value}</span>',
         data:['task', 'timeentry', 'doc']
-      });
+    })
   });
