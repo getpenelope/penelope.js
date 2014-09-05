@@ -24,6 +24,6 @@ Download app
     
 rename your app in bower.json (_this name has to be the name given to the app folder es: client_)
 
-    npm install
+    npm install bower grunt-cli
     bower install
     grunt serve
