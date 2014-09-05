@@ -13,8 +13,10 @@ Then install nodeenv. ( _You can find the python package here_ : [Nodeenv](https
 
     bin/pip install nodeenv
     bin/nodeenv nodeenv
-    cd nodeenv
-    . bin/activate
+    
+To activate nodejs
+
+    source ../nodejs/nodeenv/bin/activate
 
 Download app
 
